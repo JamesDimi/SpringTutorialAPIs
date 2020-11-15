@@ -2,5 +2,8 @@ package com.ddimi.SpringTutorialAPIs.topics;
 
 import org.springframework.data.repository.CrudRepository;
 
-public interface TopicRepository extends CrudRepository<Topic, String>{
+import java.util.List;
+
+public interface TopicRepository extends CrudRepository<Topic, Integer>{
+    List<Topic> findByName(String name);
 }
