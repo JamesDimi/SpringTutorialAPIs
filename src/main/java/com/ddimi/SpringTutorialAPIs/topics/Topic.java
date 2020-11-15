@@ -7,25 +7,34 @@ import javax.persistence.Id;
 public class Topic {
 
     @Id
-    private String id;
+    private int id;
     private String name;
     private String description;
+
+    private static int idCounter = 5;
 
     public Topic() {
     }
 
-    public Topic(String id, String name, String description) {
+    public Topic(String name, String description) {
+        super();
+        this.id = idCounter++;
+        this.name = name;
+        this.description = description;
+    }
+
+    public Topic(int id, String name, String description) {
         super();
         this.id = id;
         this.name = name;
         this.description = description;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
